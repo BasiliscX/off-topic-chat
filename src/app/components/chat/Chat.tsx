@@ -1,6 +1,6 @@
 import React from "react";
 import ControlPanel from "./ControlPanel";
-import MessageList from "./MessageList";
+import MessageForm from "./messages/MessageForm";
 
 const Chat = () => {
   return (
@@ -8,7 +8,7 @@ const Chat = () => {
       <h1 className="text-4xl font-bold">Off Topic Chat</h1>
       <div className="flex flex-col-reverse md:flex-row w-full h-2/3 px-5 md:px-10 md:space-x-4 mt-4">
         <ControlPanel />
-        <MessageList />
+        <MessageForm />
       </div>
     </div>
   );

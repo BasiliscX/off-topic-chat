@@ -5,11 +5,13 @@ import React, { useState, useEffect } from "react";
 export default function SendPanel() {
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
+  const [isNicknameEmpty, setIsNicknameEmpty] = useState(true);
 
   useEffect(() => {
     const savedNickname = localStorage.getItem("nickname");
     if (savedNickname) {
       setNickname(savedNickname);
+      setIsNicknameEmpty(savedNickname.trim() === "");
     }
   }, []);
 
@@ -17,6 +19,7 @@ export default function SendPanel() {
     if (nickname) {
       localStorage.setItem("nickname", nickname);
     }
+    setIsNicknameEmpty(nickname.trim() === "");
   }, [nickname]);
 
   const handleSubmit = async () => {
@@ -50,11 +53,13 @@ export default function SendPanel() {
   };
 
   return (
-    <div className="flex flex-col justify-center mt-10 md:mt-0 md:w-1/4 md:h-2/4 space-y-4 card">
+    <div className="flex flex-col justify-center mt-10 md:mt-0 md:w-1/4 space-y-4">
       <input
         type="text"
         placeholder="Anon"
-        className="p-2 bg-gray-200 rounded-md card-inner"
+        className={`p-2 bg-gray-200 rounded-md ${
+          isNicknameEmpty ? "card-inner" : "card-2"
+        }`}
         value={nickname}
         onChange={(e) => setNickname(e.target.value)}
       />

@@ -26,7 +26,11 @@ export default function MessageList() {
     };
 
     fetchMessages();
+    const intervalId = setInterval(fetchMessages, 5000); // Poll every 5 seconds
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
+
   return (
     <div className="p-4 h-40 md:h-4/5 overflow-y-auto flex flex-col-reverse">
       {messages

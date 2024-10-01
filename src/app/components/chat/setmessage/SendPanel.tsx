@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 
-export default function ControlPanel() {
+export default function SendPanel() {
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
 
   const handleSubmit = async () => {
     const message = {
-      nickname: nickname || "Anon", // Usa "Anon" si nickname está vacío
+      nickname: nickname || "Anon",
       content,
       createdAt: new Date().toISOString(),
       tag_id: 0,

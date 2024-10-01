@@ -13,7 +13,6 @@ export default function SendPanel() {
     }
   }, []);
 
-  // Guardar el nickname en localStorage cuando cambia
   useEffect(() => {
     if (nickname) {
       localStorage.setItem("nickname", nickname);
@@ -44,7 +43,6 @@ export default function SendPanel() {
         throw new Error("Network response was not ok");
       }
 
-      // Clear the form fields after successful submission
       setContent("");
     } catch (error) {
       console.error("Error posting message:", error);
@@ -52,17 +50,17 @@ export default function SendPanel() {
   };
 
   return (
-    <div className="flex flex-col justify-center mt-10 md:mt-0 md:w-1/4 space-y-4">
+    <div className="flex flex-col justify-center mt-10 md:mt-0 md:w-1/4 md:h-2/4 space-y-4 card">
       <input
         type="text"
         placeholder="Anon"
-        className="p-2 bg-gray-200 rounded-md"
+        className="p-2 bg-gray-200 rounded-md card-inner"
         value={nickname}
         onChange={(e) => setNickname(e.target.value)}
       />
       <textarea
         placeholder="Mensaje"
-        className="p-4 bg-gray-200 rounded-md"
+        className="p-4 bg-gray-200 rounded-md card-inner"
         rows={4}
         value={content}
         onChange={(e) => setContent(e.target.value)}

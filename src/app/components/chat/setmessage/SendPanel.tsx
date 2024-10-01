@@ -58,14 +58,14 @@ export default function SendPanel() {
         type="text"
         placeholder="Anon"
         className={`p-2 bg-gray-200 rounded-md ${
-          isNicknameEmpty ? "card-inner" : "card-2"
+          isNicknameEmpty ? "card-inner" : "card-2 text-black"
         }`}
         value={nickname}
         onChange={(e) => setNickname(e.target.value)}
       />
       <textarea
         placeholder="Mensaje"
-        className="p-4 bg-gray-200 rounded-md card-inner"
+        className="p-4 bg-gray-200 rounded-md card-inner text-black"
         rows={4}
         value={content}
         onChange={(e) => setContent(e.target.value)}

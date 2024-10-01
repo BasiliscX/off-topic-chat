@@ -16,8 +16,11 @@ export default function MessageList() {
     const fetchMessages = async () => {
       try {
         const response = await fetch(
-          "https://off-topic-backend.vercel.app/api/messages"
+          `${process.env.NEXT_PUBLIC_API_URL}/api/messages`
         );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
         const data = await response.json();
         setMessages(data);
       } catch (error) {
@@ -28,7 +31,7 @@ export default function MessageList() {
     fetchMessages();
     const intervalId = setInterval(fetchMessages, 5000); // Poll every 5 seconds
 
-    return () => clearInterval(intervalId); // Cleanup on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   return (

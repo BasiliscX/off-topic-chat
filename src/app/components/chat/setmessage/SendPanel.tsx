@@ -6,7 +6,6 @@ export default function SendPanel() {
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
 
-  // Recuperar el nickname de localStorage cuando el componente se monta
   useEffect(() => {
     const savedNickname = localStorage.getItem("nickname");
     if (savedNickname) {

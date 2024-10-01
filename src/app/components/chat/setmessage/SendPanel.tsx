@@ -1,14 +1,28 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function ControlPanel() {
+export default function SendPanel() {
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
 
+  useEffect(() => {
+    const savedNickname = localStorage.getItem("nickname");
+    if (savedNickname) {
+      setNickname(savedNickname);
+    }
+  }, []);
+
+  // Guardar el nickname en localStorage cuando cambia
+  useEffect(() => {
+    if (nickname) {
+      localStorage.setItem("nickname", nickname);
+    }
+  }, [nickname]);
+
   const handleSubmit = async () => {
     const message = {
-      nickname: nickname || "Anon", // Usa "Anon" si nickname está vacío
+      nickname: nickname || "Anon",
       content,
       createdAt: new Date().toISOString(),
       tag_id: 0,
@@ -31,7 +45,6 @@ export default function ControlPanel() {
       }
 
       // Clear the form fields after successful submission
-      setNickname("");
       setContent("");
     } catch (error) {
       console.error("Error posting message:", error);

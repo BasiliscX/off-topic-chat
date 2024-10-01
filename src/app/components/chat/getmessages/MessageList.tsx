@@ -26,14 +26,21 @@ export default function MessageList() {
     };
 
     fetchMessages();
+    const intervalId = setInterval(fetchMessages, 5000); // Poll every 5 seconds
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
+
   return (
-    <div className="p-4 h-40 md:h-4/5 overflow-y-auto flex flex-col-reverse">
+    <div className="p-4 h-40 md:h-4/5 overflow-y-auto flex flex-col-reverse card-inner">
       {messages
         .slice()
         .reverse()
         .map((message, index) => (
-          <div key={index} className="mb-4 p-4 border rounded-md shadow-sm">
+          <div
+            key={index}
+            className="mb-4 p-4 border rounded-md shadow-sm card"
+          >
             <div className="font-bold">{message.nickname}</div>
             <div className="mt-2">{message.content}</div>
             <div className="mt-1 text-sm text-gray-500">

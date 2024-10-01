@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaSync } from "react-icons/fa";
 
 interface MessageFormProps {
@@ -7,43 +7,19 @@ interface MessageFormProps {
   refreshMessages: () => void;
 }
 
-const MessageForm: React.FC<MessageFormProps> = ({
-  onSendMessage,
-  currentTag,
-  refreshMessages,
-}) => {
-  const [input, setInput] = useState("");
-  const [nickname, setNickname] = useState(
-    localStorage.getItem("nickname") || "Anon"
-  );
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (input.trim()) {
-      onSendMessage(input, nickname, currentTag);
-      setInput("");
-    }
-  };
-
-  const handleNicknameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNickname(e.target.value);
-    localStorage.setItem("nickname", e.target.value);
-  };
-
+const MessageForm: React.FC<MessageFormProps> = () => {
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col space-y-2">
+    <form className="flex flex-col space-y-2">
       <div className="flex items-center space-x-2">
         <input
           type="text"
-          value={nickname}
-          onChange={handleNicknameChange}
+          value={"anonymous"}
           className="p-2 border border-gray-300 rounded-md focus:outline-none flex-grow"
           placeholder="Tu nickname..."
         />
         <div className="relative group">
           <button
             type="button"
-            onClick={refreshMessages}
             className="p-2 bg-gray-200 rounded-md focus:outline-none"
           >
             <FaSync className="text-gray-600" />
@@ -55,8 +31,7 @@ const MessageForm: React.FC<MessageFormProps> = ({
       </div>
       <input
         type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
+        value={"Hola"}
         className="p-2 border border-gray-300 rounded-md focus:outline-none"
         placeholder="Escribe tu mensaje..."
       />

@@ -34,7 +34,7 @@ export default function MessageList() {
         <h2 className="text-xl font-bold">Mensajes</h2>
       </div>
 
-      <div className="p-4 h-44 md:h-4/5 overflow-y-auto flex flex-col-reverse">
+      <div className="p-4 h-40 md:h-4/5 overflow-y-auto flex flex-col-reverse">
         {messages
           .slice()
           .reverse()

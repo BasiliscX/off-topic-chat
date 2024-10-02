@@ -23,7 +23,10 @@ export default function Header() {
           <nav className="hidden md:block">
             <ul className="flex space-x-4">
               <li>
-                <LinkHeaderMobile text="Pag 1" href="" />
+                <LinkHeaderMobile
+                  text="Repositorio"
+                  linkref="https://github.com/BasiliscX/off-topic-chat/tree/develop"
+                />
               </li>
             </ul>
           </nav>
@@ -54,8 +57,14 @@ export default function Header() {
             className="md:hidden bg-primary-background fixed top-16 left-0 right-0 z-50"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <LinkHeaderMobile text="Pag 1" href="" />
-              <LinkHeaderMobile text="Pag 2" href="" />
+              <LinkHeaderMobile
+                text="Repositorio"
+                linkref="https://github.com/BasiliscX/off-topic-chat/tree/develop"
+              />
+              <LinkHeaderMobile
+                text="Dev"
+                linkref="https://www.navarroguillermo.com/"
+              />
             </div>
           </motion.div>
         )}

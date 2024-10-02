@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import LinkHeaderMobile from "../header/LinkHeaderMobile";
 
 export default function Footer() {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,17 +46,13 @@ export default function Footer() {
               Off Topic
             </Link>
           </div>
-          <nav className="mb-4 md:mb-0">
+          <nav className="mb-4 md:mb-0 invisible md:visible">
             <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
               <li>
-                <Link href="/pag1" className="hover:text-primary-foreground/80">
-                  Página 1
-                </Link>
-              </li>
-              <li>
-                <Link href="/pag2" className="hover:text-primary-foreground/80">
-                  Página 2
-                </Link>
+                <LinkHeaderMobile
+                  text="Dev"
+                  linkref="https://www.navarroguillermo.com/"
+                />
               </li>
             </ul>
           </nav>

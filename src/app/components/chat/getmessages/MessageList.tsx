@@ -35,7 +35,7 @@ export default function MessageList() {
   }, []);
 
   return (
-    <div className="p-4 h-40 md:h-4/5 overflow-y-auto flex flex-col-reverse card-inner">
+    <div className="p-4 h-64 md:h-4/5 overflow-y-auto flex flex-col-reverse card-inner text-black">
       {messages
         .slice()
         .reverse()

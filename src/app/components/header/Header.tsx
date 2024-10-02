@@ -15,11 +15,14 @@ export default function Header() {
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
+          <div className="flex items-center w-32">
             <Link href="/" className={`text-lg font-bold `}>
               Off Topic
             </Link>
           </div>
+          <p className="italic text-center text-sm px-10 md:text-xl">
+            Si queres conocer a alguien, dale libertad
+          </p>
           <nav className="hidden md:block">
             <ul className="flex space-x-4">
               <li>

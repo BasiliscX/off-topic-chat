@@ -1,63 +1,33 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isTransparent, setIsTransparent] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isTop = window.scrollY < 100;
-      setIsTransparent(isTop);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 text-black ${
-        isTransparent ? "bg-transparent" : "bg-primary shadow-md"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 text-black card-2`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link
-              href="/"
-              className={`text-lg font-bold ${
-                isTransparent ? "text-primary" : "text-primary-foreground"
-              }`}
-            >
+            <Link href="/" className={`text-lg font-bold `}>
               Off Topic
             </Link>
           </div>
           <nav className="hidden md:block">
             <ul className="flex space-x-4">
               <li>
-                <Link
-                  href="/pag1"
-                  className={`hover:opacity-80 ${
-                    isTransparent ? "text-primary" : "text-primary-foreground"
-                  }`}
-                >
+                <Link href="/pag1" className={`hover:opacity-80`}>
                   Página 1
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/pag2"
-                  className={`hover:opacity-80 ${
-                    isTransparent ? "text-primary" : "text-primary-foreground"
-                  }`}
-                >
+                <Link href="/pag2" className={`hover:opacity-80`}>
                   Página 2
                 </Link>
               </li>
@@ -66,9 +36,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-md hover:bg-primary-foreground/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${
-                isTransparent ? "text-primary" : "text-primary-foreground"
-              }`}
+              className={`inline-flex items-center justify-center p-2 rounded-md hover:bg-primary-foreground/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white`}
             >
               <span className="sr-only">Abrir menú principal</span>
               {isMenuOpen ? (

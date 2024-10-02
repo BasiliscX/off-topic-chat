@@ -1,6 +1,6 @@
 # Off-Topic Chat
 
-Off-Topic Chat es una aplicación de chat en tiempo real construida con [Next.js](https://nextjs.org), [React](https://reactjs.org), y [Tailwind CSS](https://tailwindcss.com). Esta aplicación permite a los usuarios enviar y recibir mensajes en tiempo real, con una interfaz moderna y responsiva.
+[Off-Topic Chat](https://offtopic-alpha.vercel.app/) es una aplicación de chat en tiempo real construida con [Next.js](https://nextjs.org), [React](https://reactjs.org), y [Tailwind CSS](https://tailwindcss.com). Esta aplicación permite a los usuarios enviar y recibir mensajes en tiempo real, con una interfaz moderna y responsiva.
 
 ## Tecnologías Utilizadas
 

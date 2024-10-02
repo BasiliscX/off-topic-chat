@@ -25,11 +25,6 @@ export default function Header() {
               <li>
                 <LinkHeaderMobile text="Pag 1" href="" />
               </li>
-              <li>
-                <Link href="/pag2" className={`hover:opacity-80`}>
-                  Página 2
-                </Link>
-              </li>
             </ul>
           </nav>
           <div className="md:hidden">

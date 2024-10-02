@@ -50,8 +50,16 @@ La carpeta de Chat incluye los siguientes archivos:
 - **Principales Funcionalidades**:
   - Indica al usuario que el servidor no está disponible.
 
-## Tecnologías Utilizadas
+Si deseas contribuir a este proyecto, por favor sigue estos pasos:
 
-- **React**: Biblioteca principal para construir la interfaz de usuario.
-- **Axios**: Para realizar solicitudes HTTP al backend.
-- **Tailwind CSS**: Utilizado para estilos y diseño de la interfaz de usuario.
+1. **Fork** el repositorio.
+2. **Clona** tu fork en tu máquina local.
+3. Asegúrate de estar en la rama `develop` (`git checkout develop`).
+4. Crea una nueva rama para tu característica (`git checkout -b feature/nueva-caracteristica`).
+5. Realiza tus cambios y **commitea** (`git commit -m 'Añadir nueva característica'`).
+6. **Push** a la rama (`git push origin feature/nueva-caracteristica`).
+7. Abre un **Pull Request** en GitHub hacia la rama `develop`.
+
+Por favor, asegúrate de que tus cambios no rompan la funcionalidad existente y que sigan las convenciones de código del proyecto. También es recomendable que ejecutes los tests antes de enviar tu pull request.
+
+¡Gracias por tu colaboración!

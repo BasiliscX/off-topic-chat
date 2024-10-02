@@ -31,11 +31,11 @@ export default function Footer() {
       initial="hidden"
       animate={controls}
       variants={footerVariants}
-      className={`bg-primary text-primary-foreground py-8 ${
+      className={`bg-primary text-primary-foreground py-8 card-2 ${
         isVisible ? "shadow-lg" : ""
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-black">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 text-black">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <Link

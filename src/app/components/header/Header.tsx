@@ -23,9 +23,7 @@ export default function Header() {
           <nav className="hidden md:block">
             <ul className="flex space-x-4">
               <li>
-                <Link href="/pag1" className={`hover:opacity-80`}>
-                  Página 1
-                </Link>
+                <LinkHeaderMobile text="Pag 1" href="" />
               </li>
               <li>
                 <Link href="/pag2" className={`hover:opacity-80`}>

@@ -21,7 +21,7 @@ export default function Header() {
             </Link>
           </div>
           <p className="italic text-center text-sm px-10 md:text-xl">
-            Si queres conocer a alguien, dale libertad
+            Si querés conocer a alguien, dale libertad
           </p>
           <nav className="hidden md:block">
             <ul className="flex space-x-4">
